@@ -174,7 +174,7 @@ input[type="reset"]:hover {
         </div>
     </form>
     <script>
-        function resetForm() {
+        function reset() {
             document.getElementById("text1").value = "";
             document.getElementById("text2").value = "";
             document.getElementById("select").selectedIndex = 0; 
