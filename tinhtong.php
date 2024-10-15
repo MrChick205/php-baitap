@@ -5,6 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/buoi-2/baitap/diem.css">
     <title>Bảng Điểm</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+}
+
+#input {
+    margin-bottom: 15px;
+}
+
+#input span {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+select {
+    width: calc(100% - 20px); 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="text"]:disabled {
+    background-color: #e9ecef;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    background-color: #28a745; 
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+input[type="reset"] {
+    background-color: #dc3545; 
+}
+
+input[type="reset"]:hover {
+    background-color: #c82333; 
+}
+
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+
+    input[type="text"],
+    select {
+        font-size: 14px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+        width: 100%;
+        margin-top: 5px;
+    }
+}
+    </style>
 </head>
 <body>
     <?php
@@ -82,10 +168,18 @@
                     <input type="submit" name="ok" id="ok" value="OK">
                 </div>
                 <div class="col-sm-2">
-                    <input type="reset" name="cancel" id="cancel" value="Cancel">
+                    <input type="button" onclick=reset() name="cancel" id="cancel" value="Cancel">
                 </div>
             </div>
         </div>
     </form>
+    <script>
+        function resetForm() {
+            document.getElementById("text1").value = "";
+            document.getElementById("text2").value = "";
+            document.getElementById("select").selectedIndex = 0; 
+            document.getElementById("result").value = ""; 
+        }
+    </script>
 </body>
 </html>
